@@ -6,21 +6,26 @@ class User {
         this.body = body;
     }
 
-    login() {
+    async login() {
         const client = this.body;
         const reqId=client.id;
         const reqPassword=this.body.password;
-        const { id, password } = UserStorage.getUserInfo(reqId);
-        if(!id) return {success: false, msg: "id is not exist",};
+        const { id, password } = await UserStorage.getUserInfo(reqId);
+        if(!id) return {success: false, msg: "id does not exist",};
         else if(password===reqPassword)
             return {success: true, msg: "login success",};
         else return {success: false, msg: "wrong password",};
 
     }
-    register() {
+    async register() {
         const client = this.body;
-        UserStorage.saveUser(client);
-        return {success: true,};
+        try {
+        const response = await UserStorage.saveUser(client);
+        return response;
+        } catch(err) {
+            console.error(err);
+        }
+        return { success: false, msg: "id already exist", };
     }
 }
 module.exports = User;
