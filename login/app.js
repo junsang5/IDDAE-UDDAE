@@ -3,6 +3,8 @@
 const express=require("express");
 const app=express();
 const bodyParser = require("body-parser");
+const dotenv=require("dotenv");
+dotenv.config();
 //routing
 const home=require("./src/routes/home");
 //web setting
