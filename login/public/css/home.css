@@ -1,0 +1,308 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+}
+#banner {
+    position: fixed;
+    /*고정*/
+    left: 10px;
+    /*위치 지정 : 오른쪽에서 몇 px에 위치, 왼쪽 배너이면 left : 2px; */
+    top: 10px;
+    /* 위치 지정 : 상단에서 몇 px에 위치, 하단부터라면 bottom:48px; */
+    text-align: center;
+    /*중앙정렬*/
+    z-index: 1;
+}
+.main-container{
+    height: 100%;
+    width: 100%;
+    display:flex;
+    flex-direction:column;
+}
+.main-container::before{
+    position: fixed;
+    z-index: -1;
+    height: 1200px;
+    width: 100%;
+    content: "";
+    /* background-attachment: fixed; */
+    background-image: url('../images/section_background.jpg');
+    /* background-repeat: no-repeat; */
+    background-position: 50% 40%;
+    background-size: 1800px 2700px;
+
+
+    filter: blur(5px) brightness(40%);
+    transform: scale(1.02);
+}
+.section{
+    display: flex;
+    width: 100%;
+    height: 700px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+}
+.section2{
+    position: relative;
+    display: flex;
+    margin: 0;
+    /* position: relative; */
+    flex-direction: row;
+    width: 100%;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+}
+.section2:nth-child(1){
+    flex-direction: column;
+    justify-content: end;
+    margin-bottom: 80px;
+}
+.select_btn{
+    margin: 3rem;
+    box-sizing: border-box;
+    width: 35%;
+    height: 300px;
+    padding: 4rem 2rem;
+    font-size: clamp(1rem, 3vw, 3.5rem);
+    font-weight: bold;
+    border-radius: 30px;
+    letter-spacing: 0.4rem;
+    background-color:rgba(80, 80, 80, 0.5);
+    color: rgba(255, 255, 255, 0.7);
+}
+.select_btn:hover{
+    transition: 0.3s;
+    background-color:#ffa24b97;
+    color: rgba(255, 255, 255, 0.9);
+}
+.select_btn:active{
+    transition: 0.3s;
+    background-color:#f98316d1;
+    color: rgba(255, 255, 255, 1);
+}
+.sub_text{
+    font-size: 20px;
+    margin-top: 50px;
+}
+.text{
+    /* color:aliceblue; */
+    color: rgba(255, 255, 255, 0.8);
+    /* mix-blend-mode: difference; */
+    /* font-size: 30px; */
+    font-size: clamp(1rem, 2.5vw, 2rem);
+    text-align: center;
+    line-height: 2em;
+    letter-spacing: 0.25rem;
+
+    animation: downslide 0.7s ease-out;
+}
+.subject{
+    font-size: 50px;
+    font-weight: bold;
+}
+.event_btn{
+    position: fixed;
+    box-sizing: border-box;
+
+    top: 80%;
+    transform: translate(-50%, -50%);
+    border: none;
+    border-radius: 60px;
+    padding: 15px 40px;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 0.15rem;
+    background-color:rgba(0, 0, 0, 0.5);
+    color: rgba(255, 255, 255, 0.7);
+}
+#event_text{
+    position: fixed;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(0.7rem, 1.6vw, 2rem);
+    color: rgba(255, 255, 255, 0.8);
+    animation: upslide 0.7s ease-out;
+}
+.event_btn:hover{
+    background-color:rgba(0, 0, 0, 0.7);
+    color: rgba(255, 255, 255, 0.9);
+    transition: 0.3s;
+}
+.event_btn:active{
+    background-color:rgba(0, 0, 0, 1);
+    color: rgb(255, 255, 255);
+}
+.login-container{
+    display:none;
+    flex-direction: column;
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    background-color: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+}
+.close{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+.close_btn{
+    background-color: transparent;
+    color:#fff;
+    font-size: 20px;
+    transform: translate(180px, 0);
+}
+.login-form{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+.login-form h1{
+    color:aliceblue;
+    font-size: 30px;
+    font-weight: bolder;
+    margin: 40px;
+    letter-spacing: 0.5rem;
+}
+.login-form input{
+    margin: 10px;
+    padding: 0 0 0 10px;
+    width: 15rem;
+    height: 2rem;
+    border-radius: 0.2rem;
+    font-size: 16px;
+    letter-spacing: 0.1rem;
+    color: #fff;
+    background-color: transparent;
+    border:none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+}
+.login-form input:focus{
+    box-shadow: 0 10px 12px -7px rgba(0, 79, 255, 0.7);
+}
+.login-form button{
+    margin: 30px;
+    width: 8rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    color:rgba(0, 0, 0, 0.7);
+    background: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.1rem;
+}
+.login-form button:hover{
+    color:rgba(0, 0, 0, 0.9);
+    background: rgba(255, 255, 255, 0.9);
+    transition: 0.3s;
+}
+.login-form button:active{
+    color:rgba(0, 0, 0, 1);
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 10px 12px -7px rgba(0, 79, 255, 1);
+}
+button:hover{
+    cursor: pointer;
+}
+.loginBtn{
+    margin: 30px;
+    width: 8rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    color:rgba(0, 0, 0, 0.7);
+    background: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.1rem;
+}
+
+@keyframes downslide {
+    from{
+        top: -200px;
+        opacity: 0;
+    }
+    to{
+        top:0px;
+        opacity: 1;
+    }
+}
+@keyframes upslide {
+    from{
+        top: 100vh;
+        opacity: 0;
+    }
+    to{
+        top:90vh;
+        opacity: 1;
+    }
+}
+@keyframes appear{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes moveLeftButton{
+    0%{
+    }
+    100%{
+        left: 50%;
+        top: 90%;
+        transform: translate(-50%, -50%);
+        width:35%;
+        height:70px;
+    }
+}
+
+@media (max-width:1024px){
+    .section{
+        height: 640px;
+    }
+    .subject{
+        font-size: 45px;
+    }
+    .event_btn{
+        font-size: 30px;
+    }
+    .select_btn{
+        font-size: 20px;
+    }
+    .sub_text{
+        font-size: 14px;
+    }
+}
+@media (max-width:768px){
+    .section{
+        height: 600px;
+    }
+    .subject{
+        font-size: 40px;
+    }
+    .event_btn{
+        font-size: 28px;
+    }
+    .section2{
+        flex-direction: column;
+    }
+    .section2:nth-child(1){
+        justify-content: center;
+    }
+    .select_btn{
+        font-size: 15px;
+        margin: 20px;
+    }
+    .sub_text{
+        font-size: 10px;
+    }
+}

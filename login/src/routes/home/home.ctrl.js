@@ -4,7 +4,7 @@ const User = require("../../models/User");
 
 const output = {
     login: (req, res) => {
-        logger.info(`GET /login 304 "move to login page`);
+        logger.info(`GET /login 304 "move to login page"`);
         res.render("home/login");
     },
     register: (req, res) => {

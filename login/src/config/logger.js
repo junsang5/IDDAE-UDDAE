@@ -8,7 +8,7 @@ const printFormat = printf(({ timestamp, label, level, message }) => {
 const printLogFormat = {
     file: combine(
         label({
-            lavel: "taste back-end",
+            label: "taste back-end",
         }),
         timestamp({
             format: "YYYY-MM-DD HH:mm:dd",

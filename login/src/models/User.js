@@ -35,5 +35,7 @@ class User {
             return { success: false, msg: "id already exist", };
         }
     }
+
+
 }
 module.exports = User;
