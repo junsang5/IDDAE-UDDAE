@@ -8,7 +8,7 @@ const calendar = google.calendar({
     version:'v3',
     auth:process.env.API_KEY,
 
-})
+});
 
 router.get('/access', (req, res) => {
     const oauth2Client = new google.auth.OAuth2(
@@ -34,7 +34,7 @@ router.get('/access', (req, res) => {
     res.redirect(url);
 });
 
-router.get('/', async(req, res) => {
+router.get('/token', async(req, res) => {
     const oauth2Client = new google.auth.OAuth2(
         process.env.CLIENT_ID,
         process.env.CLIENT_SECRET,
@@ -44,6 +44,10 @@ router.get('/', async(req, res) => {
     const { tokens } = await oauth2Client.getToken(code);
     oauth2Client.setCredentials(tokens);
     res.send(tokens);
+})
+
+router.get('/calendar/insert ', (req, res) => {
+    //req.body
 })
 
 export default router;

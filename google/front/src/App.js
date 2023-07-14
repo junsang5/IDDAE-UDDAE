@@ -1,30 +1,32 @@
 import './App.css';
-import {GoogleLogin} from 'react-google-login';
+import axios from 'axios';
+
 
 function App() {
-  const responseGoogle = response => {
-    console.log(response);
-  }
-
-  const responseError = error => {
-    console.log(error);
-  }
 
   return (
-    <div>
-      <div>
-        <GoogleLogin
-          clientId='356933661068-5tdbmnlrgttafgdb1s51f74r51ulejbl.apps.googleusercontent.com'
-          buttonText='connect with google calendar'
-          onSuccess={responseGoogle}
-          onFailure={responseError}
-          cookiePolicy={'single_host_origin'}
-          responseType='code'
-          accessType='offline'
-          scope='openid email profile https://www.googleapis.com/auth/calendar'
-          />
+    <html>
+      <body>
+      <div id="g_id_onload"
+      data-client_id="356933661068-5tdbmnlrgttafgdb1s51f74r51ulejbl.apps.googleusercontent.com"
+      data-context="signin"
+      data-ux_mode="popup"
+      data-login_uri="http://localhost:4000/access"
+      data-auto_prompt="false">
       </div>
-    </div>
+
+      <div class="g_id_signin"
+          data-type="standard"
+          data-shape="rectangular"
+          data-theme="outline"
+          data-text="signin_with"
+          data-size="large"
+          data-logo_alignment="left">
+      </div>
+      </body>
+  </html>
+
+
   );
 }
 
