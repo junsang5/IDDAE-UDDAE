@@ -6,6 +6,7 @@ function App() {
 
   return (
     <html>
+      <head><script src ="https://account.google.com/gsi/client" aync defer></script></head>
       <body>
       <div id="g_id_onload"
       data-client_id="356933661068-5tdbmnlrgttafgdb1s51f74r51ulejbl.apps.googleusercontent.com"

@@ -1,4 +1,5 @@
-const errorHandler = (err, _, res, __) => {
+import { ErrorRequestHandler } from "express";
+const errorHandler: ErrorRequestHandler = (err, _, res, __) => {
 	const status = err.status || 500;
 	if (status === 500) {
 		console.error(err.stack || '');

@@ -1,17 +1,18 @@
 import express from 'express';
 import http from 'http';
-import router from './router/index.js';
-import errorHandler from './middlewares/errorHandler.js';
+import router from './router/index';
+import errorHandler from './middlewares/errorHandler';
 import dotenv from 'dotenv';
+import dataSource from './config/dataSource';
 dotenv.config();
-// const connectDB = async () => {
-// 	try {
-// 		await dataSource.initialize();
-// 		console.log('DB connected!');
-// 	} catch (err) {
-// 		console.error(err);
-// 	}
-// };
+const connectDB = async () => {
+	try {
+		await dataSource.initialize();
+		console.log('DB connected!');
+	} catch (err) {
+		console.error(err);
+	}
+};
 const loadExpressApp = () => {
 	//await connectDB();
 
