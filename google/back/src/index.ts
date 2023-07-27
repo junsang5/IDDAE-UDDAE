@@ -13,8 +13,8 @@ const connectDB = async () => {
 		console.error(err);
 	}
 };
-const loadExpressApp = () => {
-	//await connectDB();
+const loadExpressApp = async() => {
+	await connectDB();
 
 	const app = express();
 	app.use(express.json());
