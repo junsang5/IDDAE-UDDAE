@@ -1,4 +1,5 @@
-import {Entity, PrimaryGeneratedColumn, Column, ManyToOne} from "typeorm";
+import {Entity, PrimaryGeneratedColumn, Column, OneToMany, JoinColumn} from "typeorm";
+import { PossibleTime } from "./PossibleTime";
 
 @Entity()
 export class Meet {
@@ -23,5 +24,10 @@ export class Meet {
 
     @Column()
     type: string
+
+    @OneToMany(()=>PossibleTime, (possible_time)=>possible_time.meet)
+    possible_times: PossibleTime[]
+
+
 
 }

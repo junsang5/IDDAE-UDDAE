@@ -1,4 +1,4 @@
-import {Entity, PrimaryGeneratedColumn, Column, ManyToOne} from "typeorm";
+import {Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn} from "typeorm";
 import {Meet} from './Meet';
 @Entity()
 export class PossibleTime {
@@ -9,5 +9,6 @@ export class PossibleTime {
     start_time: Date
 
     @ManyToOne( () => Meet, (meet)=>meet.possible_times)
+    @JoinColumn({name:"meet_id"})
     meet: Meet
 }
