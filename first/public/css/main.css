@@ -1,0 +1,187 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-sizing: border-box;
+}
+button:hover{
+    cursor: pointer;
+}
+/* remove bouncing white background when scroll to top bottom */
+html {
+    overflow: hidden;
+    height: 100%;
+    -ms-overflow-style: none; /*hide-scrollbar IE edge*/
+    scrollbar-width: none; /*hide-scrollbar firefox*/
+}
+body {
+    overflow: auto;
+    height: 100%;
+}
+/* hide scroll-bar(chrome) */
+body::-webkit-scrollbar{
+    display: none;
+}
+.main-container{
+    width: 100%;
+    height: 1024px;
+    position:relative;
+}
+.main-container::before{
+    position:absolute;
+    z-index: -1;
+    content: "";
+    width: 100%;
+    height: 1024px;
+    background-image: linear-gradient(180deg, #7B90FF 0%, rgba(115, 137, 255, 0.51) 16.15%, rgba(99, 124, 255, 0.00) 100%);
+    filter: blur(2px);
+    transform: scale(1.05);
+}
+.main-text{
+    color: rgba(78, 63, 255, 0.80);
+    font-family: Pretendard;
+    font-size: 5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    position:absolute;
+    left: 150px;
+    top: 402px;
+    animation: rightslide 0.7s ease-out;
+}
+.sign-in-with-google{
+    background-color: #FFF;
+    display: flex;
+    position: absolute;
+    top:632px;
+    left:150px;
+    width: 270px;
+    height: 63px;
+    border-radius: 12px;
+    overflow: hidden;
+    align-items: center;
+    animation: appear 0.7s ease-out;
+}
+.google-login-img{
+    border: none;
+    outline: none;
+    width: 63px;
+    transform: scale(1.05);
+}
+.sign-in-with-google-text{
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    color:#95a2e1;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+.sign-in-with-google:hover{
+    filter: brightness(95%);
+    transition: 0.3s;
+}
+.sign-in-with-google:hover p{
+    color:#7489f3;
+}
+.sign-in-with-google:active{
+    filter: brightness(90%);
+}
+.sign-in-with-google:active p{
+    color:#5b76fd;
+}
+.main-text2{
+    color: rgba(78, 63, 255, 0.80);
+    font-family: Pretendard;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    position:absolute;
+    left: 150px;
+    top: 335px;
+    animation: appear 0.7s ease-out;
+}
+.introduce-text2{
+    font-size: 3rem;
+    line-height: 5rem;
+}
+.first-select-button{
+    width: 600px;
+    height: 400px;
+    border-radius: 36px;
+    border: 5px solid rgba(78, 63, 255, 0.80);
+    background: #FFF;
+    position:absolute;
+    animation: appear 0.7s ease-out;
+    /* animation-delay: 0.3s;
+    animation-fill-mode: both; */
+}
+#goodtime-button{
+    top:66px;
+    left:778px;
+}
+#badtime-button{
+    top:542px;
+    left:778px;
+}
+.button-text{
+    color: rgba(78, 63, 255, 0.9);
+    font-family: Pretendard;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 700;
+    transform: translate(0, -8rem);
+    letter-spacing: 0.2rem;
+}
+.button-side-text{
+    color: rgba(78, 63, 255, 0.9);
+    font-family: Pretendard;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    transform: translate(0, 8rem);
+    letter-spacing: 0.2rem;
+}
+.first-select-button:hover{
+    background-color: rgb(251, 249, 255);
+    border: 6px solid rgba(78, 63, 255);
+    color: rgba(78, 63, 255);
+    transition: 0.3s;
+}
+.first-select-button:active{
+    background-color: rgb(247, 246, 255);
+    border: 7px solid rgba(78, 63, 255);
+    transition: 0s;
+}
+
+@keyframes rightslide {
+    from{
+        left: 30px;
+        opacity: 0;
+    }
+    to{
+        left: 150px;
+        opacity: 1;
+    }
+}
+@keyframes appear{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@media (max-width:1024px){
+    .main-text{
+        left: 100px;
+        font-size: 4rem;
+        font-weight: 650;
+    }
+}
+@media (max-width:768px){
+    .main-text{
+        font-size: 3rem;
+        font-weight: 600;
+    }
+}
